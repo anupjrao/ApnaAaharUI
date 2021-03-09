@@ -1,0 +1,44 @@
+<form [formGroup]="UpdateForm" class="update-form" (ngSubmit)="OnSubmit()">
+    <h3>Update Details</h3>
+    <hr>
+    
+    
+        <div>
+            <mat-form-field appearance="outline"  class="form-full-width" >
+                <mat-label class="fontsize">User Name</mat-label>
+                <input type="text" matInput placeholder="UserName" value="{{token.userFullName}}" style="color: grey;" disabled="true"/>
+              </mat-form-field>
+        </div>
+        <div>
+            <small class="text-danger" [class.d-none]="UpdateForm.get('Location').untouched || UpdateForm.get('Location').valid">Location required</small><br>
+            <mat-form-field appearance="outline"  class="form-full-width" >
+                <mat-label class="fontsize">Location</mat-label>
+                <input type="text" matInput placeholder="Enter new Location" formControlName="Location"/>
+              </mat-form-field>
+              
+        </div>
+        
+        <div >
+             <small class="text-danger" [class.d-none]="!(UpdateForm.get('CurrentPassword').touched && UpdateForm.get('CurrentPassword').invalid)">Current Password required</small><br> 
+            <mat-form-field appearance="outline"  class="form-full-width" >
+                <mat-label class="fontsize">Current Password</mat-label>
+                <input type="password" matInput placeholder="Enter Current Pasword" [type]="hide1 ? 'password' : 'text'"formControlName="CurrentPassword" autocomplete="off">
+                <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </mat-form-field>              
+        </div>
+        <div>
+            <small class="text-danger" [class.d-none]="!(UpdateForm.get('NewPassword').touched && UpdateForm.get('NewPassword').invalid)">Must have min 8 characters, atleast a digit, a capital & small letter</small><br>
+            <mat-form-field appearance="outline"  class="form-full-width" >
+                <mat-label class="fontsize">New Password</mat-label>
+                <input  type="password" matInput placeholder="Enter New Password" [type]="hide2 ? 'password' : 'text'" formControlName="NewPassword" autocomplete="off" >
+                <mat-icon matSuffix (click)="hide2 = !hide2">{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </mat-form-field> 
+              <br><small class="text-danger" *ngIf="(UpdateForm.get('NewPassword').value==UpdateForm.get('CurrentPassword').value) && UpdateForm.get('NewPassword').valid && UpdateForm.get('NewPassword').touched && UpdateForm.get('CurrentPassword').touched">**Current and New password can't be same
+            </small>
+        </div>
+        <div class="input-button">
+            <button mat-raised-button color="green" type="submit" [disabled]="UpdateForm.get('Location').value==''" >
+            Update</button>
+        </div>    
+       
+</form>

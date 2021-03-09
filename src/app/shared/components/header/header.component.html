@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-lg navbar-light info">
+  <img (click)="routeToHome()" class="img-fluid mb-2" style="width: 50px;height: 50px;float: left;" src="assets\images\ApnaAaharLogo.png">
+
+  <a (click)="routeToHome()" class="navbar-brand">ApnaAahar</a>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="user==null; else loggedIn">
+    <ul class="navbar-nav mr-auto">
+
+    </ul>
+    <button type="button" class="btn btn-light btn-space navbar-btn navbar-right" (click)="routeToLogin()">Login</button>
+    <button type="button" class="btn btn-light btn-space navbar-btn navbar-right" (click)="routeToRegister()">Register</button>
+  </div>
+  <ng-template #loggedIn>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+
+      </ul>
+      <div class="mr-3 mt-3"><p style="font-weight: 200;font-size: 18px;color:white;">Hello, {{user.userFullName}}!</p></div>
+      <button mat-icon-button [matMenuTriggerFor]="menu"  class="userIcon btn btn-dark btn-lg userBtn">
+        <mat-icon>account_box</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="redirect()">Dashboard</button> 
+        <button mat-menu-item (click)="updateProfile()">Update Profile</button>
+        <button mat-menu-item (click)="logOut()">Logout</button>
+      </mat-menu>
+      
+    </div>
+  </ng-template>
+  <div class="mt-2 ml-2" id='google_translate_element'></div>
+</nav>

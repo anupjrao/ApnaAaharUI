@@ -1,0 +1,19 @@
+<div *ngIf="users?.length>0;else empty"><div class="container" *ngFor="let user of users" style="width:auto">
+    <div class="card" >
+    <h3 class="card-header">{{user.userFullName}}</h3 >
+    <div class="card-body">
+        <div style="float:left"><p class="card-text"><label >Email Id :</label> {{user.email}}<br>
+            <label>Location :</label> {{user.location}}<br>
+            <label>Mobile :</label> {{user.phoneNumber}}
+          </p></div>
+          <div style="padding-top: 20px;">
+
+      <button mat-raised-button color="warn" style="outline:none;float:right;" (click)="decline(user.userId)">Decline</button>
+     <button mat-raised-button color="green" style="outline:none;float: right;margin-right: 30px;" (click)="accept(user.userId)">Accept</button>
+          
+    </div>
+</div>
+  </div>
+  </div>
+</div>
+<ng-template #empty><div *ngIf="users?.length==0"><h1 style="text-align: center;color:brown ;margin-top: 10px;">"Don't have any pending requests"</h1></div></ng-template>

@@ -1,0 +1,99 @@
+<br>
+<br>
+<div class="container-fluid col-md-5 border mb-2 main-container">
+<form class="my-form" *ngIf="signUpForm" [formGroup]="signUpForm" (submit)="onSubmit()">
+    <div class="align">
+     <div class="line">
+      <div>
+        <div>
+          <div>
+            <div> <a  (click)="Back()" class="previous"><b><</b></a>
+          <h1><b>SignUp</b></h1>
+          <hr style="height:3px;border-width:30;color:gray;background-color:gray">
+        
+        </div>
+      </div>
+      </div>  
+      <mat-form-field appearance="outline"  class="form-control-range" >
+        <mat-label class="fontsize">Full Name</mat-label>
+        <input type="text" matInput placeholder="Enter FullName" formControlName="fullName" >
+      </mat-form-field>
+      <div class="text-danger" *ngIf="!signUpForm.controls.fullName.valid && signUpForm.controls.fullName.touched">{{getNameError()}}</div>
+      
+      <mat-form-field appearance="outline" class="form-control-range">
+               <mat-label class="fontsize">MobileNumber</mat-label> 
+        <input type="tel" matInput placeholder="555-555-1234" formControlName="mobileNumber"/>
+      </mat-form-field>
+    
+      <div class="text-danger" *ngIf="!signUpForm.controls.mobileNumber.valid && signUpForm.controls.mobileNumber.touched">
+        <div *ngIf="signUpForm.controls.mobileNumber.errors.required">Mobile Number is required</div>
+        <div *ngIf="signUpForm.controls.mobileNumber.errors.pattern">Mobile Number should be 10 digits</div>
+      </div>
+      <mat-form-field appearance="outline" class="form-control-range">
+        <mat-label class="fontsize">Email ID</mat-label>
+        <input type="email" matInput placeholder="Ex:abc@gmail.com" formControlName="emailId"/>
+    </mat-form-field>
+    <div class="text-danger" *ngIf="!signUpForm.controls.emailId.valid && signUpForm.controls.emailId.touched">{{getEmailError()}}</div>  
+
+
+  <mat-form-field  appearance="outline" class="form-control-range">
+    <mat-label style="font-size: 17px;">SignUpAs</mat-label>
+    <mat-select [(value)]="selected" formControlName="userRole" (selectionChange)="onChange($event)">
+      <mat-option value="1" >Farmer</mat-option>
+      <mat-option value="2" >Buyer</mat-option>
+    </mat-select>
+  
+  </mat-form-field>
+  <p *ngIf="selected==1"></p>
+
+  <mat-radio-group *ngIf="selected==1" formControlName="signUpType">
+    <mat-radio-button value="Community" (change)="setRadio($event)"  >Community</mat-radio-button>
+    <mat-radio-button value="Individual" (change)="setRadio($event)" >Individual</mat-radio-button>
+  </mat-radio-group>
+  
+  <mat-form-field appearance="outline" style="background-color: white;" *ngIf="(isHidden||!isHidden) && selected==1" class="form-control-range" >
+    <mat-label class="fontsize">Farmer id</mat-label>
+    <input type="number"  matInput placeholder="Enter farmer id" formControlName="farmerId"/>
+</mat-form-field>
+<div class="text-danger" *ngIf="!signUpForm.controls.farmerId.valid && signUpForm.controls.farmerId.touched">{{getFarmerIdError()}}</div>    
+<div class="text-danger" *ngIf="response==='FarmerId already exists'">FarmerId already exists</div>  
+
+  <mat-form-field appearance="outline" *ngIf="isHidden &&  selected==1" class="form-control-range">
+    <mat-label class="fontsize">Community Name</mat-label>
+    <input type="text" matInput placeholder="Enter Community Name" formControlName="communityName"/>
+</mat-form-field>
+<div class="text-danger" *ngIf="!signUpForm.controls.communityName.valid && signUpForm.controls.communityName.touched">{{getCommunityNameError()}}</div>
+<div class="text-danger" *ngIf="response==='Community Name Already Exists'">Community Name Already Exists</div>  
+  
+  <mat-form-field appearance="outline" class="form-control-range">
+    <mat-label class="fontsize">Location</mat-label>
+    <input type="text" matInput placeholder="Enter your Location" formControlName="location"/>
+</mat-form-field>
+<div class="text-danger" *ngIf="!signUpForm.controls.location.valid && signUpForm.controls.location.touched">{{getLocationError()}}</div>    
+
+      <mat-form-field appearance="outline" class="form-control-range">
+        <mat-label class="fontsize">Password</mat-label>
+        <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+    <div class="text-danger" *ngIf="!signUpForm.controls.password.valid && signUpForm.controls.password.touched">{{getPasswordError()}}</div>
+
+      <mat-form-field appearance="outline" class="form-control-range">
+        <mat-label class="fontsize">Confirm Password</mat-label>
+        <input type="password" matInput placeholder="confirm password" formControlName="confirmPassword"/> 
+    </mat-form-field>
+    <div class="text-danger" *ngIf="!signUpForm.controls.confirmPassword.valid && signUpForm.controls.confirmPassword.touched">
+      <div *ngIf="signUpForm.controls.confirmPassword.errors.required">Confirm Password is required</div>
+      <div *ngIf="signUpForm.controls.confirmPassword.errors.mustMatch">Passwords must match</div>
+    </div>   
+       
+ 
+    <br>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!signUpForm.valid">SignUp</button>
+      <button style="float:right" mat-raised-button color="basic" type="reset" (click)="resetForm()">Reset</button>
+      </div>
+      </div>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,26 @@
+.listingRow{
+    margin: 25px;
+    min-height: 35em;
+}
+.img-fluid {
+    margin-bottom: 30px;
+    height: 80px;
+    width:100px;
+    clear: both;
+ }
+ .myPrimaryButton{
+     background-color: #329168;
+ }
+ .infoText{
+     font-weight: bold;
+ }
+ .clearbtn{
+     background-color: red;
+ }
+ .error-font{
+     margin-top:0.5em;
+     font-size: 25px;
+ }
+ .mat-spinner-color::ng-deep circle{
+    stroke:#329168 !important;
+    }

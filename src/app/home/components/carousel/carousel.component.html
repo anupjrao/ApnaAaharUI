@@ -1,0 +1,45 @@
+<div class="carousel">
+    
+    <div class="search-bar-container"> <app-search></app-search> 
+    </div>
+
+    <ngb-carousel *ngIf="images">
+
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="carousel-image" [src]="images[0].name" alt="Potatoes Image">
+        </div>
+        <div class="carousel-caption">
+          <h3>Tomato</h3>
+          <p *ngIf="tomatoListing; else noListing"> <br> Farmer:{{tomatoListing.farmer.user.userFullName}} <br>
+            Price:{{tomatoListing.price}} <br> Quantity:{{tomatoListing.quantity}}</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="carousel-image" [src]="images[1].name" alt="Tomatoes Image">
+        </div>
+        <div class="carousel-caption">
+          <h3>Potato</h3>
+          <p *ngIf="potatoListing; else noListing"> <br> Farmer:{{potatoListing.farmer.user.userFullName}} <br>
+            Price:{{potatoListing.price}} <br> Quantity:{{potatoListing.quantity}}</p>
+        </div>
+      </ng-template>
+      <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+          <img class="carousel-image" [src]="images[2].name" alt="Onions Image">
+        </div>
+        <div class="carousel-caption">
+          <h3>Onion </h3>
+          <p *ngIf="onionListing; else noListing"> <br> Farmer:{{onionListing.farmer.user.userFullName}} <br>
+            Price:{{onionListing.price}} <br> Quantity:{{onionListing.quantity}}</p>
+        </div>
+      </ng-template>
+
+      <ng-template #noListing>
+        <h3>No Listings for this Product Type</h3>
+      </ng-template>
+    </ngb-carousel>
+  </div>
+
+

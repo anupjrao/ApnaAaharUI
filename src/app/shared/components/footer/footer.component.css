@@ -1,0 +1,81 @@
+.footer{
+    background-color:#808080;
+    bottom: 0px;
+    margin-left: 0px;
+    width: 100%;
+    height: max-content;
+}
+
+a:link{
+   color: white;
+}
+a:visited{
+    color: white;
+}
+a:hover{
+    color:black;
+}
+.column4{
+    font-size: 15px;
+    font-style: normal;
+    line-height: normal;
+    text-align: center;
+    align-items: center;
+    padding-top: 10px;
+}
+.image-size{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0em;
+    width: 80px;
+    height: 60px;
+}
+.column3{
+    font-size: 15px;
+    font-style: normal;
+    line-height: 20px;
+    text-align: center;
+    align-items: center;
+    padding-top: 20px;
+}
+.text-style{
+    font-size: 15px;
+    font-style: normal;
+    line-height: normal;
+    padding:0px;
+    text-align: left;   
+}
+.fontsize{
+    font-size: 20px;
+    padding-top: 20px;
+    
+}
+.modal-header {
+height: 50px;
+}
+.modal-title{
+    text-align: center;
+}
+.modal-body{
+    padding-top: 10px;
+    margin-right: 10px;
+   
+}
+.modal-body1{
+    margin-left: 20px;
+    margin-right: 20px;
+    float: left;
+    justify-content: right;
+    text-justify: auto;
+}
+.close:focus{
+    outline: none;
+}
+.close{
+    border: none;
+    background: none;
+}
+.modal-dialog{
+    overflow-y:initial;
+}

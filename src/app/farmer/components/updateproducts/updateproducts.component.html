@@ -1,0 +1,54 @@
+<div class="container-fluid main-container">
+    <div class="row">
+        <div class="col-30">
+        </div>
+        <div class="col-40">
+            <h3>Update Product Details</h3>
+            <hr style="height:3px;border-width:30;color:gray;background-color:gray">
+            <form [formGroup]='updateProductForm'(ngSubmit)="updateListingsOnSubmit()" class="horizontal-form">
+                <div class="form-group mx-sm-3 mb-2">
+                    <mat-form-field appearance="outline" class="form-control-range">
+                        <mat-label class="fontsize">Product Type</mat-label>
+                        <input type="text" matInput value="{{productData.productType.productType1}}" [disabled]="true">
+                    </mat-form-field>
+                    <br />
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <div class="text-danger" *ngIf="!updateProductForm.controls.productQuantity.valid && updateProductForm.controls.productQuantity.touched">
+                        <div *ngIf="updateProductForm.controls.productQuantity.errors.required">Quantity is required</div>
+                        <div *ngIf="updateProductForm.controls.productQuantity.errors.max || updateProductForm.controls.productQuantity.errors.min" >Product Quantity must be with in 1 to 100</div>
+                      </div>
+                    <mat-form-field appearance="outline" class="form-control-range">
+                        <mat-label class="fontsize">Quantity</mat-label>
+                        <input type="number" matInput placeholder="Enter New Quantity" formControlName="productQuantity">
+                    </mat-form-field>
+                    <br />
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <div class="text-danger" *ngIf="!updateProductForm.controls.price.valid && updateProductForm.controls.price.touched">
+                        <div *ngIf="updateProductForm.controls.price.errors.required">Price is required</div>
+                        <div *ngIf="updateProductForm.controls.price.errors.min">Price cannot be lesser than MSP</div>
+                      </div>
+                    <mat-form-field appearance="outline" class="form-control-range">
+                        <mat-label class="fontsize">Price</mat-label>
+                        <input type="number" matInput placeholder="Enter New Quantity" formControlName="price">
+                    </mat-form-field>
+                    <br />
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <mat-form-field appearance="outline" class="form-control-range">
+                        <mat-label class="fontsize">MSP</mat-label>
+                        <input type="text" matInput value="{{msp}}" [disabled]="true">
+                    </mat-form-field>
+                    <br />
+                </div>
+                <div class="form-group mx-sm-3 mb-2">
+                    <div class="example-button-row">
+                        <button mat-raised-button color="primary" type="submit"
+                            [disabled]="!updateProductForm.valid">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

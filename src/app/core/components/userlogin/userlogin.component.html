@@ -1,0 +1,77 @@
+<br>	
+<div class="container-fluid col-md-5 main-container">
+	<form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+		<div class="align">
+     <div class="line">
+      <div>
+  
+  <div>
+    <div>
+      <div> <a  (click)="Back()" class="previous"><b><</b></a>
+    <h1><b>Login</b></h1>
+    <hr style="height:3px; widows: 10px; ;color:gray;background-color:gray">
+  
+  </div>
+</div>
+</div>
+
+
+
+<br>
+<div class="formField">      
+      <mat-form-field appearance="outline" class="form-control-range">
+        <mat-label class="fontsize">Email ID</mat-label>
+        <input type="email" matInput placeholder="Enter Email" formControlName="email" /> 
+    </mat-form-field>
+
+	  <div class="text-danger"
+  *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
+{{emailFieldEmptyError}}
+</div>
+
+
+	  <div class="text-danger"
+*ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email">
+  {{invalidEmailError}}
+</div>
+
+ 
+ <div>
+
+
+  
+  <mat-form-field appearance="outline" class="form-control-range">
+    <mat-label class="fontsize">Password</mat-label>
+    <input matInput type="password" placeholder="Password" [type]="hide ? 'password' : 'text'" formControlName="password">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+</mat-form-field>
+<div class="text-danger"
+*ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
+{{passwordError}}
+</div>
+<div>
+	<a style="margin-left:-15px; margin-top: -3rem;" routerLink="/user/forgotPassword" (click)="Eventrigger()">Forgot Password?</a>
+</div>
+	
+
+</div>
+	<br>
+  <button class="form-control-range btnLogin" mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">LogIn</button>
+  <br>
+  <div style="margin-bottom: 1em;">
+    <hr class="seperator left" >
+     <label style="margin-left: 3rem; font-size:20px">Or</label>
+    <hr class="seperator right">
+  </div>
+  
+	<button style="margin-left:44%;" mat-raised-button color="primary" class="form-control-width" routerLink="/user/register" type="submit" >Sign Up</button>
+</div>
+      </div>
+      </div>
+      </div>
+    </form>
+  </div>
+  <br>
+  <br>
+  <br>
+  

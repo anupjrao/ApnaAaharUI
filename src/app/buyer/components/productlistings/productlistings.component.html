@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="row listingRow">
+        <div class="cols-3 mr-2 border rounded">
+            <div class="form-group m-2">
+                <form [formGroup]="filterFormGroup" (ngSubmit)="getFilteredList()">
+                    <mat-form-field class="example-full-width">
+                        <input formControlName="filter" type="text" matInput placeholder="Search">
+                        <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                    <div>
+                        <button mat-flat-button color="primary" class="myPrimaryButton"
+                            (click)="getFilteredList()">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div class="form-group m-2">
+                <label style="font-weight: bold;margin-bottom:-2em;margin-top:1em;">Price:</label>
+                <form [formGroup]="filterByPriceAndLocation" (ngSubmit)="filterByPriceAndLoc()">
+                    0<mat-slider min="0" max="500" step="1" formControlName="priceFilter" #priceFilter></mat-slider>
+                    {{priceFilter.value}}
+                    <div>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Location</mat-label>
+                            <input matInput formControlName="locationFilter">
+                        </mat-form-field>
+                    </div>
+                    <div>
+                        <div class="mb-2">
+                            <button mat-flat-button color="primary" class="myPrimaryButton"
+                                (click)="filterByPriceAndLoc()">Apply Filters</button>
+                        </div>
+                        <button mat-flat-button color="warn" class="clearbtn" (click)="clearFilters()">Clear
+                            Filters</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div style="margin-left:35%;margin-top:15%;" *ngIf="_hasAPIReturnedValue==false">
+            <mat-spinner class="mat-spinner-color"></mat-spinner>
+            <div class="container" style="margin-left:-12%;"><h2>Fetching data</h2></div>
+        </div>
+
+        <div class="col ml-2 border rounded" *ngIf="_hasAPIReturnedValue==true">
+            <div ng-cloak *ngIf="listingData" class="m-2">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngFor="let listing of listingData">
+                        <div class="row">
+                            <div class="col-3 col-offset-4"><img class="img-fluid"
+                                    src="{{_images[listing.productType.productType1]}}"></div>
+                            <div class="col-5" class="infoText">
+                                <label>Price:</label><span class="mr-1">{{listing.price |
+                                    currency:"INR":"symbol"}}</span><br />
+                                <label>Farmer Name:</label><span
+                                    class="mr-1">{{listing.farmer.user.userFullName}}</span><br />
+                                <label>Product Type:</label><span
+                                    class="mr-1">{{listing.productType.productType1}}</span><br />
+                                <label>Quantity:</label><span class="mr-1">{{listing.quantity}}</span>Kg<br />
+                                <label>Location:</label><span class="mr-1">{{listing.farmer.user.location}}</span>
+                            </div>
+                        </div>
+                        <div *ngIf="!User || User.userRole==2" style="float: right;">
+                            <button mat-flat-button color="primary" class="myPrimaryButton"
+                                (click)="createRequest(listing)" value="{{getValueListing(listing)}}"
+                                appContactRequestButton>Contact</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div *ngIf="listingData!= undefined && listingData.length==0">
+                <p class="text-danger error-font">
+                    No results found
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

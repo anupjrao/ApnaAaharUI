@@ -1,0 +1,61 @@
+.update-form{
+    background-color: white;
+    text-align: left;
+    width:45%;
+    margin:auto;
+    margin-bottom: 10px;
+    margin-top: 25px;
+    border-width: 1px;
+    height:auto;
+    padding :30px;
+    border-style: solid;
+    border-color: rgb(141, 143, 143);
+    border-radius:6px;
+}
+.input-button{
+    width: 95%;
+    text-align: right;
+}
+.form-body{
+    margin-top: 30px;
+    margin-bottom:20px;
+}
+h3{
+    color:#329168;
+    font-size: large;
+    font-weight: bold;
+    font-style : normal;
+}
+ input[type=text]{
+        width: 60%;
+        font-size: large;
+        color:rgb(3, 3, 3);
+}
+input[type=password]{
+    width: 60%;
+}  
+
+hr{
+    margin-bottom: 10px;
+}
+
+.form-full-width {
+    width: 100%;
+  }
+  .mat-green{
+    background-color: #329168;
+    color: white;
+  }
+  .text-danger{
+    margin-bottom: 5px;
+  }
+  .fontsize{
+      font-size: medium;
+      color: darkgrey;
+  }
+  
+ 
+
+  
+
+ 

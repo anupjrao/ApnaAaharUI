@@ -1,0 +1,15 @@
+<div *ngIf="users?.length>0;else empty" class="container"><div *ngFor="let user of users">
+  <div class="card" >
+  <h3 class="card-header">{{user.userFullName}}</h3 >
+  <div class="card-body">
+    <div style="float:left">
+    <p class="card-text"><label>Email Id :</label> {{user.email}}<br>
+      <label>Location : </label> {{user.location}}<br>
+     <label>Mobile : </label> {{user.phoneNumber}}
+    </p></div>
+    <button mat-raised-button color="warn" style="outline:none;float:right;margin-top: 15px;" (click)="disable(user.userId)">Disable</button>  
+  </div>
+</div>
+</div>
+</div>
+<ng-template #empty><div><h1 style="text-align: center;color:brown ;margin-top: 10px;">"Don't have any registered Users"</h1></div></ng-template>

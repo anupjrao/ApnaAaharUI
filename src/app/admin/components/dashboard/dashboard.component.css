@@ -1,0 +1,10 @@
+.mat-tab-group {
+    width: 50%;
+    margin: auto;
+  }
+  ::ng-deep .mat-tab-label  {
+    font-size: 17px;
+}
+.container{
+  min-height: 30.5em;
+}

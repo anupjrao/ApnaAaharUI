@@ -1,0 +1,21 @@
+<div style="margin-top:40px;min-height:31em;">
+<table class="table table-bordered" >
+    <thead class="thead-light">
+      <tr>
+        <th scope="col" style="text-align: center;" colspan="3">MSP Data Table</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="col" class="align">Product Type</th>
+            <th scope="col" class="align">Price(Rs.)</th>
+            <th scope="col" class="align">Action</th>
+        </tr>
+      <tr *ngFor="let productData of productTypes">
+        <td class="align">{{productData.productType1}}</td>
+        <td class="align" contenteditable="true" (keyup)="change($event,productData.productTypeId)">{{productData.msp}}</td>
+        <td class="align"><button class="myButton" mat-raised-button color="primary" (click)="update(productData.productTypeId)">Update</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

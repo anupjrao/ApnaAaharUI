@@ -1,0 +1,58 @@
+<div class="footer">
+  <div class="row">
+    <div class="col-sm-4 column3">
+      <span class="fontsize" style="color: black;"><b>Important Links</b></span><br>
+      <a href="" data-toggle="modal" data-target="#myModal">
+        About us
+      </a>
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title"><b>About us</b></h3>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="text-style modal-body">
+              <ul *ngFor="let value of values">
+                <li>{{value}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <a href="" data-toggle="modal" data-target="#myModal2">
+        Terms of use
+      </a>
+      <div class="modal" id="myModal2">
+        <div class="modal-dialog" style="overflow-y: scroll; max-height:85%;  margin-top: 50px; margin-bottom:50px;">
+          <div class="modal-content">
+            <div class="text-style modal-body modal-body1">
+              <button type="button" class="close close1" data-dismiss="modal">&times;</button>
+              <h3 style="text-align: center;"><b>ApnaAahar</b></h3>
+              <h4 style="text-align: center;"><b>Terms and Conditions</b></h4>
+              <ul *ngFor="let term of termsOfUse">
+                <li>{{term}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 column4 mb-2" style="line-height: 8px;">
+      <img class="image-size " src="/assets/images/ApnaAaharLogo.png"><br>
+      <span style="color:white">Right out of Farm</span>
+    </div>
+    <div class="col-sm-4 column4" style="color:white;">
+      <span class="fontsize" style="color: black;"><b>Contact Us</b></span><br>
+      <span>Plot No. 1,</span>
+      <span>Chandaka Industrial Estate,</span>
+      <span>Patharagadia, </span><br>
+      <span>Bhubaneswar,Odisha,India,</span>
+      <span>PinCode:751024.</span><br>
+      <span>Phone Number:040-2424024</span><br>
+      <span>MailId:apnaaaharorchard@gmail.com</span><br>
+      <br>
+    </div>
+  </div>
+</div>

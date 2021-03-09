@@ -1,0 +1,16 @@
+
+<form [formGroup]="search" (ngSubmit)="SearchProducts()">
+  <div class="form-group">
+    <div class="search-bar">
+      <div class="input-group input-group-lg">
+       <input type="text" class="form-control" formControlName="productType" placeholder="Search">
+        <div class="input-group-append">
+        <button class="btn btn-success" type="submit" [disabled]="search.controls.productType.value==''">Search</button>
+        </div>
+        </div>
+        
+      </div>
+  </div>
+  
+  </form>
+

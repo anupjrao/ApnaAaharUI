@@ -1,0 +1,48 @@
+
+.row{
+    width: 100%;
+}
+ 
+
+.navbar-custom {
+    color: #CC3333;
+    background-color: #329168;
+
+    }
+ 
+ .btn-space {
+    margin-right: 10px;
+}
+.navbar-brand{
+	color: white;
+	font-size: 45px;
+    font-family: "candara";
+    padding-top: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+.img-fluid {
+   margin-bottom: 40px;
+   height: 80px;
+   width:100px;
+   cursor: pointer;
+}
+.info{
+    background-color:#329168 ;
+}
+.navbar-right
+{
+    color:#349671;
+    margin-top: 9px;
+    top: 40px;
+    margin-left: 15px;
+    font-size: 15px;
+    font-weight: 600;
+
+}  
+
+.userBtn{
+    background-color: #808080;
+}

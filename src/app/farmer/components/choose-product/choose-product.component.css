@@ -1,0 +1,10 @@
+.img-fluid {
+    margin-bottom: 30px;
+    height: 250px;
+    width:300px;
+    clear: both;
+ }
+ .mat-spinner-color::ng-deep circle{
+    stroke:#329168 !important;
+    }
+  

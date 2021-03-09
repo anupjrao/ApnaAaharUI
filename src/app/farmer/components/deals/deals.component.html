@@ -1,0 +1,47 @@
+<div class="container">
+  <div style="margin-left:40%;margin-top:10%;margin-bottom: 15em;" *ngIf="_hasAPIReturnedValue==false">
+    <mat-spinner class="mat-spinner-color"></mat-spinner>
+    <div class="container" style="margin-left:-5%;"><h2>Fetching data</h2></div>
+  </div>
+</div>
+<div *ngIf="_hasAPIReturnedValue==true">
+  <div *ngIf="dealsData.length!=0;else NoPendingRequests" style="min-height: 28em;">
+    <div class="container" *ngFor="let item of dealsData; let i = index" style="width:auto;">
+      <div class="card">
+        <h3 class="card-header">Deal {{i+1}}</h3>
+        <div class="card-body">
+          <div>
+            <div class="row">
+              <img class="img-fluid" src="{{_images[item.productListing.productType.productType1]}}">
+              <div class="col-4 mt-2 ml-2">
+                <label>Buyer Name:</label>{{item.buyer.userFullName}}<br/>
+                <label>Buyer Email:</label>{{item.buyer.email}}<br/>
+                <label>Buyer Location:</label>{{item.buyer.location}}<br/>
+                <label>Buyer Phone Number:</label>{{item.buyer.phoneNumber}}<br/>
+                <label>Product Selected:</label>{{item.productListing.productType.productType1}}<br/>
+              </div>
+              <div class="button-container">
+                <button mat-raised-button color="warn" style="outline:none;float:right;"
+                  (click)=" requestDeclined(i)">Decline</button>
+                <button mat-raised-button color="green" style="outline:none;float: right;margin-right: 30px;"
+                  (click)="requestAccepted(i)">Accept</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+    
+  </div>
+  <ng-template #NoPendingRequests>
+    <div class="col ml-2 border rounded box1">
+      <div>
+        <p class="text-danger notFoundfont">
+          No Pending Requests
+        </p>
+      </div>
+    </div>
+  </ng-template>
+  
+</div>

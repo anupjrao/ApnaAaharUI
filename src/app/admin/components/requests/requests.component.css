@@ -1,0 +1,29 @@
+.card{
+    margin:40px;  
+  } 
+  .card-header{
+      background-color: #329168;
+      color:white;
+      font-weight: bold;
+      
+  }
+  .card-body{
+      text-align: left;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top:10px
+  }
+  .card-text{
+    font-style:initial;
+      font-size : 16px;
+      font-weight:normal;
+      line-height: 20px;
+      text-align: left;
+  }
+  .mat-green{
+    background-color: #329168;
+    color: white;
+  }
+  #label{
+    font-weight: bold;
+  }

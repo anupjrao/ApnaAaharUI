@@ -1,0 +1,61 @@
+
+.text-danger{
+  margin-bottom: 5px;
+}
+  .form-full-width {
+    width: 80%;
+    
+  }
+.main-container{
+  margin-left:auto;
+  padding:20px 10px 15px 25px;
+  padding-top:2rem;
+  padding-bottom: 3rem;
+  border-style: ridge;
+  min-height:500px;
+} 
+.formField
+{
+  margin-left: -1em;
+}
+  
+
+.flex-v-center {
+  display: flex;
+  align-items: center;
+}
+
+
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 12px 16px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.previous {
+  background-color: #808080;
+  color: white;
+  font-size: 2em;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 10px;
+  display: inline-block;
+  color: #329168;font-family:'candara';font-size: 3em;margin-top:0.5em;
+}
+.formField
+{
+  margin-left: 3em;
+}
+
+
+.fontsize{
+    font-size: 17px;
+}
+.mat-radio-button ~ .mat-radio-button {
+   margin-left: 16px;
+}

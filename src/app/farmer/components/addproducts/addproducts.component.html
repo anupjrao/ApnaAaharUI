@@ -1,0 +1,55 @@
+<p></p>
+<div class="container-fluid main-container">
+    <div class="row">
+        <div class="col-30">
+        </div>
+        <div class="col-40">
+            <h3>Add Product Details</h3>
+                <hr style="height:3px;border-width:30;color:gray;background-color:gray">
+                <form [formGroup]='AddProductForm' class="horizontal-form" (ngSubmit)="Submit()">
+                    <div class="form-group mx-sm-3 mb-2">
+                        <mat-form-field appearance="outline" class="form-control-range">
+                            <mat-label class="fontsize">Product Type</mat-label>
+                            <input type="text" matInput value="{{productType.productType1}}" [disabled]="true">
+                        </mat-form-field>
+                        <br />
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <div *ngIf="ProductQuantity.touched && ProductQuantity.invalid">
+                            <div *ngIf="ProductQuantity.errors.required" class="text-danger">Product Quantity is required.</div>
+                            <div *ngIf="ProductQuantity.errors.max || ProductQuantity.errors.min" class="text-danger">Product Quantity must be with in 1 to 100</div>
+                        </div>
+                        <mat-form-field appearance="outline" class="form-control-range">
+                            <mat-label class="fontsize">Product Quantity</mat-label>
+                            <input type="number" matInput placeholder="128592" formControlName="ProductQuantity">
+                        </mat-form-field>
+                        <br />
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <div *ngIf="Price.touched && Price.invalid">
+                            <div *ngIf="Price.errors.required" class="text-danger">Price is required.</div>
+                            <div *ngIf="Price.errors.min" class="text-danger">Price must be equal or greater than MSP</div>
+                        </div>
+                        <mat-form-field appearance="outline" class="form-control-range">
+                            <mat-label class="fontsize">Price</mat-label>
+                            <input type="number" matInput placeholder="128592" formControlName="Price">
+                        </mat-form-field>
+                        <br />
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <mat-form-field appearance="outline" class="form-control-range">
+                            <mat-label class="fontsize">MSP</mat-label>
+                            <input type="text" matInput value="{{msp}}" [disabled]="true">
+                        </mat-form-field>
+                        <br />
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <div class="example-button-row">
+                            <button mat-raised-button color="primary" type="submit" [disabled]="!AddProductForm.valid">Add Product</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+    </div>
+</div>
+<p></p>

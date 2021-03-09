@@ -1,0 +1,13 @@
+<div style="margin-left:40%;margin-top:10%;margin-bottom: 15em;" *ngIf="_hasAPIReturnedValue==false">
+    <mat-spinner class="mat-spinner-color"></mat-spinner>
+    <div class="container" style="margin-left:-1em;"><h2>Fetching data</h2></div>
+</div>
+<ul *ngIf="_hasAPIReturnedValue==true" class="row " style="list-style-type: none;margin-left: 15%; margin-top: 1rem;">
+    <li class="col-6" *ngFor="let item of produtTypes">
+        <label style="font-family:candara;font-size: 25px;
+        font-weight:bold; color: #329168;">{{item.productType1}}</label>
+        <div class="">
+            <img class="img-fluid border border-dark rounded" src="{{images[item.productType1]}}" style="cursor: pointer;" (click)="GetValue(item)">
+        </div>
+    </li>
+</ul>

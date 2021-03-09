@@ -1,0 +1,146 @@
+[
+  {
+    "productListingId": 1,
+    "farmerId": 1,
+    "quantity": 20,
+    "price": 60,
+    "productTypeId": 1,
+    "farmer": {
+      "farmerId": 1,
+      "userId": 1,
+      "isApproved": true,
+      "isAccountDisabled": false,
+      "communityId": null,
+      "community": null,
+      "user": {
+        "userId": 0,
+        "userFullName": "Dummy Name1",
+        "phoneNumber": null,
+        "email": null,
+        "location": "TestLocation2",
+        "password": null,
+        "userRole": 0,
+        "isDeleted": false,
+        "authToken": null,
+        "userRoleNavigation": null,
+        "contactRequest": [],
+        "farmerDetails": [],
+        "otp": []
+      },
+      "productListingData": [
+        {
+          "productListingId": 2,
+          "farmerId": 1,
+          "quantity": 30,
+          "price": 60,
+          "productTypeId": 2,
+          "productType": {
+            "productTypeId": 2,
+            "productType1": "Potato",
+            "msp": 50,
+            "productListingData": []
+          },
+          "contactRequest": []
+        }
+      ]
+    },
+    "productType": {
+      "productTypeId": 1,
+      "productType1": "Tomato",
+      "msp": 50,
+      "productListingData": []
+    },
+    "contactRequest": []
+  },
+  {
+    "productListingId": 2,
+    "farmerId": 1,
+    "quantity": 30,
+    "price": 60,
+    "productTypeId": 2,
+    "farmer": {
+      "farmerId": 1,
+      "userId": 1,
+      "isApproved": true,
+      "isAccountDisabled": false,
+      "communityId": null,
+      "community": null,
+      "user": {
+        "userId": 0,
+        "userFullName": "Dummy Name1",
+        "phoneNumber": null,
+        "email": null,
+        "location": "TestLocation2",
+        "password": null,
+        "userRole": 0,
+        "isDeleted": false,
+        "authToken": null,
+        "userRoleNavigation": null,
+        "contactRequest": [],
+        "farmerDetails": [],
+        "otp": []
+      },
+      "productListingData": [
+        {
+          "productListingId": 1,
+          "farmerId": 1,
+          "quantity": 20,
+          "price": 60,
+          "productTypeId": 1,
+          "productType": {
+            "productTypeId": 1,
+            "productType1": "Tomato",
+            "msp": 50,
+            "productListingData": []
+          },
+          "contactRequest": []
+        }
+      ]
+    },
+    "productType": {
+      "productTypeId": 2,
+      "productType1": "Potato",
+      "msp": 50,
+      "productListingData": []
+    },
+    "contactRequest": []
+  },
+  {
+    "productListingId": 3,
+    "farmerId": 2,
+    "quantity": 30,
+    "price": 90,
+    "productTypeId": 3,
+    "farmer": {
+      "farmerId": 2,
+      "userId": 2,
+      "isApproved": true,
+      "isAccountDisabled": false,
+      "communityId": null,
+      "community": null,
+      "user": {
+        "userId": 0,
+        "userFullName": "Dummy Name2",
+        "phoneNumber": null,
+        "email": null,
+        "location": "TestLocation1",
+        "password": null,
+        "userRole": 0,
+        "isDeleted": false,
+        "authToken": null,
+        "userRoleNavigation": null,
+        "contactRequest": [],
+        "farmerDetails": [],
+        "otp": []
+      },
+      "productListingData": []
+    },
+    "productType": {
+      "productTypeId": 3,
+      "productType1": "Zomato",
+      "msp": 50,
+      "productListingData": []
+    },
+    "contactRequest": []
+  }
+]
